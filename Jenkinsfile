@@ -12,8 +12,10 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-            withSonarQubeEnv(installationName: 'SonarScanner') {
-                sh 'mvn clean verify sonar:sonar'
+            steps {
+                withSonarQubeEnv(installationName: 'SonarScanner') {
+                    sh 'mvn clean verify sonar:sonar'
+                }
             }
         }
     }
