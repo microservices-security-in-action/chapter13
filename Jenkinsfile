@@ -11,5 +11,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+        stage('SonarQube analysis') {
+            withSonarQubeEnv(installationName: 'SonarScanner') {
+                sh 'mvn clean verify sonar:sonar'
+            }
+        }
     }
 }
