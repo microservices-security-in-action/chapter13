@@ -1,0 +1,14 @@
+# Ignore everything in this directory
+target
+mvnw
+mvnw.cmd
+.classpath
+.settings
+.project
+*.i??
+.idea
+.metadata
+.recommenders
+.mvn
+.DS_Store
+.gradle
